@@ -8,9 +8,14 @@
 import SwiftUI
 
 struct ContentView: View {
+    @StateObject var f = FetchData()
+    
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        
+      //  //List(f.responses.condition){c in
+   //         Text(c.text)
+   //     }
+        Text("temp: \(f.responses.current.temp_f)")
     }
 }
 
