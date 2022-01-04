@@ -30,7 +30,7 @@ class FetchData : ObservableObject{
             
         }.resume()
         
-        print(responses.current.condition)
+        //print(responses.current.condition ?? "")
         print(responses.current.temp_f)
     }
 }
@@ -40,11 +40,31 @@ struct Response: Codable{
 
 struct Current: Codable{
     var temp_f : Float = 0
-    var condition : [Condition] = [Condition]()
+    var temp_c : Float = 0
+    var condition : Condition?
 }
-
 struct Condition: Codable{
     var text : String
     var icon : String
+}
+
+struct Forcast: Codable{
+    var day : Day
+    var hour : [Hour]
+}
+
+struct Day: Codable{
+    var maxtemp_f : Float = 0
+    var mintemp_f : Float = 0
+    var avgtemp_f : Float = 0
+    var condition : Condition?
+}
+
+struct Hour: Codable{
+    var time : String = ""
+    var temp_f : Float = 0
+    var condition : Condition?
+    var wind_mph : Float = 0
+    var feelslike_f : Float = 0
 }
 

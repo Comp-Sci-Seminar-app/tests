@@ -12,9 +12,7 @@ struct ContentView: View {
     
     var body: some View {
         
-      //  //List(f.responses.condition){c in
-   //         Text(c.text)
-   //     }
+        Text("condition: \(f.responses.current.condition?.text ?? "")")
         Text("temp: \(f.responses.current.temp_f)")
     }
 }
