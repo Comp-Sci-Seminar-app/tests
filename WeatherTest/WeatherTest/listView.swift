@@ -28,9 +28,9 @@ struct listView: View {
 
 class makeItUsableLight{
     var time : String
-    var temp_f : Float
+    var temp_f : Double
     var condition : Condition?
-    init(time: String = "2022-01-04 00:00", temp_f : Float = 0, condition : Condition?){
+    init(time: String = "2022-01-04 00:00", temp_f : Double = 0, condition : Condition?){
         self.time = time
         self.temp_f = temp_f
         self.condition = condition

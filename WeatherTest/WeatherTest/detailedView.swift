@@ -25,12 +25,12 @@ struct detailedView: View {
 
 class makeItUsable{
     var time : String
-    var temp_f : Float
+    var temp_f : Double
     var condition : Condition?
-    var wind_mph : Float
-    var feelslike_f : Float
+    var wind_mph : Double
+    var feelslike_f : Double
     
-    init(time: String = "2022-01-04 00:00", temp_f : Float = 0, condition : Condition?, wind_mph : Float  = 0, feelslike_f : Float = 0){
+    init(time: String = "2022-01-04 00:00", temp_f : Double = 0, condition : Condition?, wind_mph : Double  = 0, feelslike_f : Double = 0){
         self.time = time
         self.temp_f = temp_f
         self.condition = condition
