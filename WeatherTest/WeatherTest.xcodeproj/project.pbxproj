@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1A79C438276B849100016F6D /* dataParsing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A79C437276B849100016F6D /* dataParsing.swift */; };
+		1AC4675F2784820F00093441 /* listView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AC4675E2784820F00093441 /* listView.swift */; };
 		1AE68DDB276B81B100A578FD /* WeatherTestApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AE68DDA276B81B100A578FD /* WeatherTestApp.swift */; };
 		1AE68DDD276B81B100A578FD /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AE68DDC276B81B100A578FD /* ContentView.swift */; };
 		1AE68DDF276B81B400A578FD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1AE68DDE276B81B400A578FD /* Assets.xcassets */; };
@@ -35,6 +36,7 @@
 
 /* Begin PBXFileReference section */
 		1A79C437276B849100016F6D /* dataParsing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dataParsing.swift; sourceTree = "<group>"; };
+		1AC4675E2784820F00093441 /* listView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = listView.swift; sourceTree = "<group>"; };
 		1AE68DD7276B81B100A578FD /* WeatherTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeatherTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1AE68DDA276B81B100A578FD /* WeatherTestApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherTestApp.swift; sourceTree = "<group>"; };
 		1AE68DDC276B81B100A578FD /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -103,6 +105,7 @@
 				1AE68DE3276B81B400A578FD /* Info.plist */,
 				1AE68DE0276B81B400A578FD /* Preview Content */,
 				1A79C437276B849100016F6D /* dataParsing.swift */,
+				1AC4675E2784820F00093441 /* listView.swift */,
 			);
 			path = WeatherTest;
 			sourceTree = "<group>";
@@ -262,6 +265,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1AC4675F2784820F00093441 /* listView.swift in Sources */,
 				1AE68DDD276B81B100A578FD /* ContentView.swift in Sources */,
 				1A79C438276B849100016F6D /* dataParsing.swift in Sources */,
 				1AE68DDB276B81B100A578FD /* WeatherTestApp.swift in Sources */,
