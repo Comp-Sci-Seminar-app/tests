@@ -36,6 +36,7 @@ class FetchData : ObservableObject{
 }
 struct Response: Codable{
     var current : Current = Current()
+    var forecast: Forecast = Forecast()
 }
 
 struct Current: Codable{
@@ -48,9 +49,12 @@ struct Condition: Codable{
     var icon : String
 }
 
-struct Forcast: Codable{
-    var day : Day
-    var hour : [Hour]
+struct Forecast: Codable{
+    var forecastday: [Forecastday] = [Forecastday()]
+}
+struct Forecastday: Codable{
+    var day : Day = Day()
+    var hour : [Hour] = [Hour(), Hour()]
 }
 
 struct Day: Codable{
@@ -61,10 +65,12 @@ struct Day: Codable{
 }
 
 struct Hour: Codable{
-    var time : String = ""
+    var time : String = "2022-01-04 00:00"
     var temp_f : Float = 0
     var condition : Condition?
     var wind_mph : Float = 0
     var feelslike_f : Float = 0
 }
-
+extension Hour: Identifiable{
+    var id: String {return time}
+}

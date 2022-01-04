@@ -8,9 +8,31 @@
 import SwiftUI
 
 struct listView: View {
-    @Binding var forc : Forcast
+    
+    
+    var usable : makeItUsableLight
+  
     
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        let rawTime = usable.time
+        HStack{
+            Text("Time: \(String(rawTime[rawTime.lastIndex(of: " ")!...]))")
+        }
+    }
+}
+
+
+
+
+
+
+class makeItUsableLight{
+    var time : String
+    var temp_f : Float
+    var condition : Condition?
+    init(time: String = "2022-01-04 00:00", temp_f : Float = 0, condition : Condition?){
+        self.time = time
+        self.temp_f = temp_f
+        self.condition = condition
     }
 }
