@@ -16,7 +16,7 @@ struct ContentView: View {
             VStack{
                 VStack{
                     Text("Forcast for the day")
-                    Text("condition: \(f.responses.current.condition?.text ?? "")")
+                    Text("condition: \(f.responses.current.condition?.text ?? "Loading...")")
                     Text("temp: \(Int(Double.rounded(f.responses.current.temp_f)())) degrees fahrenheit")
                 }
                 .frame(width: 240, height: 120, alignment: .center)
