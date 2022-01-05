@@ -30,10 +30,12 @@ class FetchData : ObservableObject{
             
         }.resume()
         
-        //print(responses.current.condition ?? "")
+        //kinda just shows if the code is runnign
         print(responses.current.temp_f)
     }
 }
+
+//ALL THE PARSING!!!!!!!!
 struct Response: Codable{
     var current : Current = Current()
     var forecast: Forecast = Forecast()

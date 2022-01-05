@@ -12,7 +12,7 @@ struct listView: View {
     
     var h : Hour
   
-    
+    //basic view for when its in the list
     var body: some View {
         let rawTime = h.time
         HStack{

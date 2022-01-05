@@ -12,10 +12,12 @@ struct ContentView: View {
     
     var body: some View {
         
+        //I think I need this ZStack for something. I'm not completely sure thogh
         ZStack{
             VStack{
                 VStack{
-                    Text("Forcast for the day")
+                    //just the current stuff
+                    Text("Current Forecast")
                     Text("condition: \(f.responses.current.condition?.text ?? "Loading...")")
                     Text("temp: \(Int(Double.rounded(f.responses.current.temp_f)())) degrees fahrenheit")
                 }
@@ -36,10 +38,13 @@ struct ContentView: View {
                 .opacity(0.8)
                 .background(
                     Group{
+                        //checks if it is night
                         if (timeToInt(f.responses.location.localtime) < 19 && timeToInt(f.responses.location.localtime) > 5){
                             Image("\(f.responses.current.condition?.code ?? 1000)")
                                 .resizable()
                                 .aspectRatio(contentMode: .fill)
+                            
+                            //if it is night, uses a different image
                         }else{
                             Image("night")
                                 .resizable()
@@ -52,11 +57,16 @@ struct ContentView: View {
                 
             }
             .background(
+                
                 Group{
+                    
+                    //checks if it is night
                     if (timeToInt(f.responses.location.localtime) < 19 && timeToInt(f.responses.location.localtime) > 5){
                         Image("\(f.responses.current.condition?.code ?? 1000)")
                             .resizable()
                             .aspectRatio(contentMode: .fill)
+                        
+                        //if it is night, uses a different image
                     }else{
                         Image("night")
                             .resizable()

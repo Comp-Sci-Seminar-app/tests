@@ -13,6 +13,8 @@ struct detailedView: View {
     
     var body: some View {
         let rawTime = info.time
+        
+        //rounding
         let displayTemp_F = Int(Double.rounded(info.temp_f)())
         let displayFeelslike_f = Int(Double.rounded(info.feelslike_f)())
         let displayWind_mph = Int(Double.rounded(info.wind_mph)())
@@ -36,7 +38,7 @@ struct detailedView: View {
                 Spacer()
                 Spacer()
                 Spacer()
-            }
+            } //making things look nice
             .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height, alignment: .top)
             .background(
                 Group{
