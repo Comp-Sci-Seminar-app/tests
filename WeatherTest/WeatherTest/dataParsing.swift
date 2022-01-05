@@ -12,7 +12,7 @@ class FetchData : ObservableObject{
     
     init(){
         
-        let url = URL(string: "https://api.weatherapi.com/v1/forecast.json?key=c6a8b99c194944a5bf0162452211612&q=19066&days=1&aqi=no&alerts=no")!
+        let url = URL(string: "https://api.weatherapi.com/v1/forecast.json?key=ADDYOURKEYHERE=no")!
         
         URLSession.shared.dataTask(with: url) { (data, response, errors) in
             
