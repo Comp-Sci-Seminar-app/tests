@@ -8,33 +8,52 @@
 import SwiftUI
 
 struct detailedView: View {
-    var info : makeItUsable
+    var info : Hour
     
     
     var body: some View {
         let rawTime = info.time
-        VStack{
-            Text(info.condition?.text ?? "API error")
-            Text("Time: \(String(rawTime[rawTime.lastIndex(of: " ")!...]))")
-            Text("Temperature: \(info.temp_f) fahrenheit")
-            Text("Feels like: \(info.feelslike_f) fahrenheit")
-            Text("Wind MPH: \(info.wind_mph)")
+        let displayTemp_F = Int(Double.rounded(info.temp_f)())
+        let displayFeelslike_f = Int(Double.rounded(info.feelslike_f)())
+        let displayWind_mph = Int(Double.rounded(info.wind_mph)())
+        GeometryReader{geo in
+            
+            
+            VStack{
+                Spacer()
+                Group{
+                    Text(info.condition?.text ?? "API error")
+                    Text("Time: \(String(rawTime[rawTime.lastIndex(of: " ")!...]))")
+                    Text("Temperature: \(displayTemp_F) degrees fahrenheit")
+                    Text("Feels like: \(displayFeelslike_f) degrees fahrenheit")
+                    Text("Wind MPH: \(displayWind_mph)")
+                }
+                .frame(width: UIScreen.main.bounds.width - 30, height: 50, alignment: .center)
+                .background(Color.white.opacity(0.2))
+                .cornerRadius(20)
+                .foregroundColor(.black)
+                .font(.system(size: 18).bold())
+                Spacer()
+                Spacer()
+                Spacer()
+            }
+            .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height, alignment: .top)
+            .background(
+                Group{
+                    if (timeToInt(info.time) < 19 && timeToInt(info.time) > 5){
+                        Image("\(info.condition?.code ?? 1000)")
+                            .resizable()
+                            .aspectRatio(contentMode: .fill)
+                    }else{
+                        Image("night")
+                            .resizable()
+                            .aspectRatio(contentMode: .fill)
+                    }
+                }
+                
+            )
+            .opacity(0.8)
         }
     }
-}
-
-class makeItUsable{
-    var time : String
-    var temp_f : Double
-    var condition : Condition?
-    var wind_mph : Double
-    var feelslike_f : Double
     
-    init(time: String = "2022-01-04 00:00", temp_f : Double = 0, condition : Condition?, wind_mph : Double  = 0, feelslike_f : Double = 0){
-        self.time = time
-        self.temp_f = temp_f
-        self.condition = condition
-        self.wind_mph = wind_mph
-        self.feelslike_f = feelslike_f
-    }
 }

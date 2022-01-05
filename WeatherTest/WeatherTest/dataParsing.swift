@@ -37,6 +37,11 @@ class FetchData : ObservableObject{
 struct Response: Codable{
     var current : Current = Current()
     var forecast: Forecast = Forecast()
+    var location: Location = Location()
+}
+
+struct Location: Codable{
+    var localtime : String = "2022-01-04 7:58"
 }
 
 struct Current: Codable{
@@ -47,6 +52,7 @@ struct Current: Codable{
 struct Condition: Codable{
     var text : String
     var icon : String
+    var code : Int
 }
 
 struct Forecast: Codable{
