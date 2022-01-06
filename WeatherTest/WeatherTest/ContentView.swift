@@ -21,9 +21,11 @@ struct ContentView: View {
                     Text("condition: \(f.responses.current.condition?.text ?? "Loading...")")
                     Text("temp: \(Int(Double.rounded(f.responses.current.temp_f)())) degrees fahrenheit")
                 }
-                .frame(width: 240, height: 120, alignment: .center)
+                .frame(width: UIScreen.main.bounds.width - 30, height: 120, alignment: .center)
                 .background(Color.gray.opacity(0.1))
                 .cornerRadius(20)
+                .foregroundColor(.black)
+                .font(.system(size: 18).bold())
                 NavigationView{
                     List(f.responses.forecast.forecastday[0].hour){h in
                         NavigationLink(destination: detailedView(info: h), label: {
