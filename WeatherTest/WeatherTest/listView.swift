@@ -6,6 +6,9 @@
 //
 
 import SwiftUI
+import struct Kingfisher.KFImage
+
+
 
 struct listView: View {
     
@@ -16,8 +19,10 @@ struct listView: View {
     
     var body: some View {
         let rawTime = h.time
+        let img = "https:" + (h.condition?.icon ?? "//www.siue.edu/~itoberm/Images/RedX.gif")
         HStack{
             Text("Time: \(String(rawTime[rawTime.lastIndex(of: " ")!...]))")
+            KFImage(URL(string: img))
         }
         .opacity(0.8)
     }

@@ -6,9 +6,12 @@
 //
 
 import SwiftUI
+import struct Kingfisher.KFImage
+
 
 struct ContentView: View {
     @StateObject var f = FetchData()
+    
     
     var body: some View {
         
