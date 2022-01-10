@@ -98,3 +98,13 @@ func timeToInt(_ rawTime : String) -> Int {
     let time = Int(tTime3) ?? 0
     return time
 }
+
+
+
+
+
+
+
+
+
+//hi
