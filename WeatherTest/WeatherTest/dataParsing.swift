@@ -30,23 +30,31 @@ class FetchData : ObservableObject{
             
         }.resume()
         
-        //print(responses.current.condition ?? "")
+        //kinda just shows if the code is runnign
         print(responses.current.temp_f)
     }
 }
+
+//ALL THE PARSING!!!!!!!!
 struct Response: Codable{
     var current : Current = Current()
     var forecast: Forecast = Forecast()
+    var location: Location = Location()
+}
+
+struct Location: Codable{
+    var localtime : String = "2022-01-04 7:58"
 }
 
 struct Current: Codable{
-    var temp_f : Float = 0
-    var temp_c : Float = 0
+    var temp_f : Double = 0
+    var temp_c : Double = 0
     var condition : Condition?
 }
 struct Condition: Codable{
     var text : String
     var icon : String
+    var code : Int
 }
 
 struct Forecast: Codable{
@@ -58,18 +66,18 @@ struct Forecastday: Codable{
 }
 
 struct Day: Codable{
-    var maxtemp_f : Float = 0
-    var mintemp_f : Float = 0
-    var avgtemp_f : Float = 0
+    var maxtemp_f : Double = 0
+    var mintemp_f : Double = 0
+    var avgtemp_f : Double = 0
     var condition : Condition?
 }
 
 struct Hour: Codable{
     var time : String = "2022-01-04 00:00"
-    var temp_f : Float = 0
+    var temp_f : Double = 0
     var condition : Condition?
-    var wind_mph : Float = 0
-    var feelslike_f : Float = 0
+    var wind_mph : Double = 0
+    var feelslike_f : Double = 0
 }
 extension Hour: Identifiable{
     var id: String {return time}

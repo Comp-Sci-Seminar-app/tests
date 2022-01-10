@@ -10,14 +10,16 @@ import SwiftUI
 struct listView: View {
     
     
-    var usable : makeItUsableLight
+    var h : Hour
   
+    //right here is where the people on stack overflow were a**holes. they told me that my issue was related to an unrelated issue, and NOT because my code was simply in the wrong place. They also lowered my community score so now any time I want to post it has to get reviewed
     
     var body: some View {
-        let rawTime = usable.time
+        let rawTime = h.time
         HStack{
             Text("Time: \(String(rawTime[rawTime.lastIndex(of: " ")!...]))")
         }
+        .opacity(0.8)
     }
 }
 
@@ -26,13 +28,3 @@ struct listView: View {
 
 
 
-class makeItUsableLight{
-    var time : String
-    var temp_f : Float
-    var condition : Condition?
-    init(time: String = "2022-01-04 00:00", temp_f : Float = 0, condition : Condition?){
-        self.time = time
-        self.temp_f = temp_f
-        self.condition = condition
-    }
-}
