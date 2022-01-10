@@ -99,12 +99,3 @@ func timeToInt(_ rawTime : String) -> Int {
     return time
 }
 
-
-
-
-
-
-
-
-
-//hi
