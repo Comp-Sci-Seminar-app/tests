@@ -22,6 +22,7 @@ struct detailedView: View {
             
             
             VStack{
+                Spacer()
                 Group{
                     Text(info.condition?.text ?? "API error")
                     Text("Time: \(String(rawTime[rawTime.lastIndex(of: " ")!...]))")
