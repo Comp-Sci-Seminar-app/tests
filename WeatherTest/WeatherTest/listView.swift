@@ -18,13 +18,17 @@ struct listView: View {
     //right here is where the people on stack overflow were a**holes. they told me that my issue was related to an unrelated issue, and NOT because my code was simply in the wrong place. They also lowered my community score so now any time I want to post it has to get reviewed
     
     var body: some View {
-        let rawTime = h.time
+        
+        //for some reason the overlords at weatherapi.com forgot to add https to their image links. this is why the link looks so weird
         let img = "https:" + (h.condition?.icon ?? "//www.siue.edu/~itoberm/Images/RedX.gif")
+        
+        
+        let rawTime = h.time
         HStack{
             Text("Time: \(String(rawTime[rawTime.lastIndex(of: " ")!...]))")
             KFImage(URL(string: img))
         }
-        .opacity(0.8)
+        
     }
 }
 

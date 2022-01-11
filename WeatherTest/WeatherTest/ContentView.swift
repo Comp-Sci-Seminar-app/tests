@@ -11,36 +11,42 @@ import struct Kingfisher.KFImage
 
 struct ContentView: View {
     @StateObject var f = FetchData()
-    
+    //@Binding hoursTest = $f.responses.forecast.forecastday[0].hour
     
     var body: some View {
         
         //I think I need this ZStack for something. I'm not completely sure thogh
         ZStack{
             VStack{
-                VStack{
-                    //just the current stuff
-                    Text("Current Forecast")
-                    Text("condition: \(f.responses.current.condition?.text ?? "Loading...")")
-                    Text("temp: \(Int(Double.rounded(f.responses.current.temp_f)())) degrees fahrenheit")
-                }
-                .frame(width: UIScreen.main.bounds.width - 30, height: 120, alignment: .center)
-                .background(Color.gray.opacity(0.1))
-                .cornerRadius(20)
-                .foregroundColor(.black)
-                .font(.system(size: 18).bold())
                 NavigationView{
-                    List(f.responses.forecast.forecastday[0].hour){h in
-                        NavigationLink(destination: detailedView(info: h), label: {
-                            listView(h: h)
-                            
+                    List(){
+                        
+                        //f.responses.forecast.forecastday[0].hour
+                        Section(header: ListHeader(f: $f.responses), content:{
+                            Group{
+                               
+                                    
+                                    
+                                    ForEach(0..<f.responses.forecast.forecastday[0].hour.count){index in
+                                        NavigationLink(destination: detailedView(info: f.responses.forecast.forecastday[0].hour[index]), label: {
+                                            listView(h: f.responses.forecast.forecastday[0].hour[index])
+                                            
+                                        })
+                                    
+                                }
+                            }
                         })
+                        // NavigationLink(destination: detailedView(info: h), label: {
+                        //      listView(h: h)
+                        
+                        //   })
                         
                         
-                    }
+                    }.listStyle(GroupedListStyle())
+                    
                     
                 }
-                .opacity(0.8)
+                .opacity(0.4)
                 .background(
                     Group{
                         //checks if it is night
@@ -58,6 +64,7 @@ struct ContentView: View {
                     }
                     
                 )
+                
                 
                 
             }
@@ -100,4 +107,26 @@ func timeToInt(_ rawTime : String) -> Int {
     let tTime3 : String = String(tTime2.dropLast())
     let time = Int(tTime3) ?? 0
     return time
+}
+
+
+//making a header for the code
+struct ListHeader: View {
+    @Binding var f: Response
+    
+    var body: some View {
+        HStack {
+            VStack{
+                //just the current stuff
+                Text("Current Forecast")
+                Text("condition: \(f.current.condition?.text ?? "Loading...")")
+                Text("temp: \(Int(Double.rounded(f.current.temp_f)())) degrees fahrenheit")
+            }
+            .frame(width: UIScreen.main.bounds.width - 30, height: 120, alignment: .center)
+            .background(Color.gray.opacity(0.8))
+            .cornerRadius(20)
+            .foregroundColor(.black)
+            .font(.system(size: 18).bold())
+        }
+    }
 }

@@ -62,7 +62,7 @@ struct Forecast: Codable{
 }
 struct Forecastday: Codable{
     var day : Day = Day()
-    var hour : [Hour] = [Hour(), Hour()]
+    var hour : [Hour] = [Hour(), Hour(), Hour(), Hour(), Hour(), Hour(), Hour(), Hour(), Hour(), Hour(), Hour(), Hour(), Hour(), Hour(), Hour(), Hour(), Hour(), Hour(), Hour(), Hour(), Hour(), Hour(), Hour(), Hour()]
 }
 
 struct Day: Codable{
