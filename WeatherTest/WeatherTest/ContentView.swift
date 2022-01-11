@@ -20,13 +20,12 @@ struct ContentView: View {
             VStack{
                 NavigationView{
                     List(){
-                        
-                        //f.responses.forecast.forecastday[0].hour
+                        //the section header is what allows the cool header to work
                         Section(header: ListHeader(f: $f.responses), content:{
                             Group{
                                
                                     
-                                    
+                                    //iterates through the hours of the day
                                     ForEach(0..<f.responses.forecast.forecastday[0].hour.count){index in
                                         NavigationLink(destination: detailedView(info: f.responses.forecast.forecastday[0].hour[index]), label: {
                                             listView(h: f.responses.forecast.forecastday[0].hour[index])
@@ -36,10 +35,7 @@ struct ContentView: View {
                                 }
                             }
                         })
-                        // NavigationLink(destination: detailedView(info: h), label: {
-                        //      listView(h: h)
-                        
-                        //   })
+
                         
                         
                     }.listStyle(GroupedListStyle())
