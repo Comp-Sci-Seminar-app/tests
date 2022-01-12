@@ -109,7 +109,6 @@ func timeToInt(_ rawTime : String) -> Int {
 //making a header for the code
 struct ListHeader: View {
     @Binding var f: Response
-    
     var body: some View {
         HStack {
             VStack{
@@ -126,3 +125,6 @@ struct ListHeader: View {
         }
     }
 }
+
+
+//HOW TO STORE APPDATA: add @AppStorage(<string>) as a wrapper. its like the state wrapper except far cooler.
