@@ -24,6 +24,8 @@ struct detailedView: View {
             VStack{
                 Spacer()
                 Group{
+                    
+                    //displaying all the data
                     Text(info.condition?.text ?? "API error")
                     Text("Time: \(String(rawTime[rawTime.lastIndex(of: " ")!...]))")
                     Text("Temperature: \(displayTemp_F) degrees fahrenheit")
@@ -31,10 +33,13 @@ struct detailedView: View {
                     Text("Wind MPH: \(displayWind_mph)")
                 }
                 .frame(width: UIScreen.main.bounds.width - 30, height: 50, alignment: .center)
-                .background(Color.white.opacity(0.2))
+                .background(Color.white.opacity(0.5))
                 .cornerRadius(20)
                 .foregroundColor(.black)
                 .font(.system(size: 18).bold())
+                //all of the . stuff are for making the text look nice
+                
+                
                 Spacer()
                 Spacer()
                 Spacer()
@@ -54,7 +59,6 @@ struct detailedView: View {
                 }
                 
             )
-            .opacity(0.8)
         }
     }
     

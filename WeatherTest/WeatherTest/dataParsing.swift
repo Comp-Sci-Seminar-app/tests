@@ -60,9 +60,11 @@ struct Condition: Codable{
 struct Forecast: Codable{
     var forecastday: [Forecastday] = [Forecastday()]
 }
+
+//If I don't have a default of 24 hours the forEach gets angry and only displays 1 hour even when it gets api data.
 struct Forecastday: Codable{
     var day : Day = Day()
-    var hour : [Hour] = [Hour(), Hour()]
+    var hour : [Hour] = [Hour(), Hour(), Hour(), Hour(), Hour(), Hour(), Hour(), Hour(), Hour(), Hour(), Hour(), Hour(), Hour(), Hour(), Hour(), Hour(), Hour(), Hour(), Hour(), Hour(), Hour(), Hour(), Hour(), Hour()]
 }
 
 struct Day: Codable{
@@ -82,3 +84,4 @@ struct Hour: Codable{
 extension Hour: Identifiable{
     var id: String {return time}
 }
+//new branch
