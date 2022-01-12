@@ -16,58 +16,47 @@ struct ContentView: View {
     var body: some View {
         
         //I think I need this ZStack for something. I'm not completely sure thogh
-        ZStack{
-            VStack{
-                NavigationView{
-                    List(){
-                        //the section header is what allows the cool header to work
-                        Section(header: ListHeader(f: $f.responses), content:{
-                            Group{
-                               
-                                    
-                                    //iterates through the hours of the day
-                                    ForEach(0..<f.responses.forecast.forecastday[0].hour.count){index in
-                                        NavigationLink(destination: detailedView(info: f.responses.forecast.forecastday[0].hour[index]), label: {
-                                            listView(h: f.responses.forecast.forecastday[0].hour[index])
-                                            
-                                        })
-                                    
-                                }
-                            }
-                        })
-
-                        
-                        
-                    }.listStyle(GroupedListStyle())
-                    
-                    
-                }
-                .opacity(0.4)
-                .background(
-                    Group{
-                        //checks if it is night
-                        if (timeToInt(f.responses.location.localtime) < 19 && timeToInt(f.responses.location.localtime) > 5){
-                            Image("\(f.responses.current.condition?.code ?? 1000)")
-                                .resizable()
-                                .aspectRatio(contentMode: .fill)
-                            
-                            //if it is night, uses a different image
-                        }else{
-                            Image("night")
-                                .resizable()
-                                .aspectRatio(contentMode: .fill)
-                        }
-                    }
-                    
-                )
+        
+        
+        NavigationView{
+            
+            ScrollView{
                 
-                
-                
-            }
-            .background(
                 
                 Group{
+                    VStack{
+                        //just the current stuff
+                        Text("Current Forecast")
+                        Text("condition: \(f.responses.current.condition?.text ?? "Loading...")")
+                        Text("temp: \(Int(Double.rounded(f.responses.current.temp_f)())) degrees fahrenheit")
+                    }
+                    .frame(width: UIScreen.main.bounds.width - 30, height: 120, alignment: .center)
+                    .background(Color.gray.opacity(0.8))
+                    .cornerRadius(20)
+                    .foregroundColor(.black)
+                    .font(.system(size: 18).bold())
+                    .opacity(0.4)
                     
+                    //iterates through the hours of the day
+                    
+                    ScrollView(.horizontal){
+                        LazyHStack {
+                            ForEach(0..<f.responses.forecast.forecastday[0].hour.count){index in
+                                NavigationLink(destination: detailedView(info: f.responses.forecast.forecastday[0].hour[index]), label: {
+                                    listView(h: f.responses.forecast.forecastday[0].hour[index]).frame(width: 90, height: 100, alignment: .center).background(Color.gray).opacity(0.4).cornerRadius(20)
+                                    
+                                })
+                            }
+                        }
+                        
+                    }.navigationBarHidden(true)
+                }
+                
+                
+                
+                
+            }.navigationBarHidden(true).background(
+                Group{
                     //checks if it is night
                     if (timeToInt(f.responses.location.localtime) < 19 && timeToInt(f.responses.location.localtime) > 5){
                         Image("\(f.responses.current.condition?.code ?? 1000)")
@@ -82,10 +71,15 @@ struct ContentView: View {
                     }
                 }
                 
-            )
+            ).navigationBarHidden(true)
+            
+            
+            
+            
             
             
         }
+        
     }
 }
 
