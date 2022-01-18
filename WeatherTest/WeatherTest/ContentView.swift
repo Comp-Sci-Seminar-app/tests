@@ -113,8 +113,7 @@ func timeToInt(_ rawTime : String) -> Int {
     return time
 }
 
-<<<<<<< HEAD
-=======
+
 
 //making a header for the code
 struct ListHeader: View {
@@ -139,4 +138,4 @@ struct ListHeader: View {
 
 //HOW TO STORE APPDATA: add @AppStorage(<string>) as a wrapper. its like the state wrapper except far cooler.
 //test
->>>>>>> LucasMerge
+
