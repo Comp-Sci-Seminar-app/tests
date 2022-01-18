@@ -39,7 +39,7 @@ struct ContentView: View {
                     ScrollView(.horizontal){
                         LazyHStack {
                             ForEach(0..<f.responses.forecast.forecastday[0].hour.count){index in
-                                NavigationLink(destination: detailedView(info: f.responses.forecast.forecastday[0].hour[index]), label: {
+                                NavigationLink(destination: detailedView(info: f.responses.forecast.forecastday[0].hour[index]).edgesIgnoringSafeArea(.all), label: {
                                     listView(h: f.responses.forecast.forecastday[0].hour[index]).frame(width: 90, height: 100, alignment: .center).background(Color.gray).opacity(0.4).cornerRadius(20)
                                     
                                 })
@@ -134,5 +134,13 @@ struct ListHeader: View {
     }
 }
 
+class AppDelegate: NSObject, UIApplicationDelegate {
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
+        UIApplication.shared.isStatusBarHidden = true // <== ADD THIS LINE
+        return true
+    }
+}
 
 //HOW TO STORE APPDATA: add @AppStorage(<string>) as a wrapper. its like the state wrapper except far cooler.
+//IF GIT MERGE IS HAVING ISSUES:  git merge <branch name> -X rename-threshold=100%
+//fix all issues, then run git commit -am 'Conflicts resolved'
