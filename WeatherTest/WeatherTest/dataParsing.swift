@@ -12,7 +12,11 @@ class FetchData : ObservableObject{
     
     init(){
         
+<<<<<<< HEAD
         let url = URL(string: "https://api.weatherapi.com/v1/forecast.json?key=ADDYOURKEYHERE=no")!
+=======
+        let url = URL(string: "https://api.weatherapi.com/v1/forecast.json?key=c6a8b99c194944a5bf0162452211612&q=19066&days=1&aqi=yes&alerts=no")!
+>>>>>>> LucasMerge
         
         URLSession.shared.dataTask(with: url) { (data, response, errors) in
             
@@ -60,9 +64,11 @@ struct Condition: Codable{
 struct Forecast: Codable{
     var forecastday: [Forecastday] = [Forecastday()]
 }
+
+//If I don't have a default of 24 hours the forEach gets angry and only displays 1 hour even when it gets api data.
 struct Forecastday: Codable{
     var day : Day = Day()
-    var hour : [Hour] = [Hour(), Hour()]
+    var hour : [Hour] = [Hour(), Hour(), Hour(), Hour(), Hour(), Hour(), Hour(), Hour(), Hour(), Hour(), Hour(), Hour(), Hour(), Hour(), Hour(), Hour(), Hour(), Hour(), Hour(), Hour(), Hour(), Hour(), Hour(), Hour()]
 }
 
 struct Day: Codable{

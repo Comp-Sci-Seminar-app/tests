@@ -24,6 +24,8 @@ struct detailedView: View {
             VStack{
                 Spacer()
                 Group{
+                    
+                    //displaying all the data
                     Text(info.condition?.text ?? "API error")
                     Text("Time: \(String(rawTime[rawTime.lastIndex(of: " ")!...]))")
                     Text("Temperature: \(displayTemp_F) degrees fahrenheit")
@@ -31,31 +33,38 @@ struct detailedView: View {
                     Text("Wind MPH: \(displayWind_mph)")
                 }
                 .frame(width: UIScreen.main.bounds.width - 30, height: 50, alignment: .center)
-                .background(Color.white.opacity(0.2))
+                .background(Color.white.opacity(0.5))
                 .cornerRadius(20)
                 .foregroundColor(.black)
                 .font(.system(size: 18).bold())
+                //all of the . stuff are for making the text look nice
+                
+                
                 Spacer()
                 Spacer()
                 Spacer()
             } //making things look nice
-            .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height, alignment: .top)
+            .frame(width: geo.size.width, height: geo.size.height, alignment: .top)
             .background(
                 Group{
+                    
                     if (timeToInt(info.time) < 19 && timeToInt(info.time) > 5){
                         Image("\(info.condition?.code ?? 1000)")
                             .resizable()
-                            .aspectRatio(contentMode: .fill)
+                            .scaledToFill()
+                            .frame(width: geo.size.width, height: geo.size.height, alignment: .top)
                     }else{
                         Image("night")
                             .resizable()
-                            .aspectRatio(contentMode: .fill)
+                            .scaledToFill()
+                            .frame(width: geo.size.width, height: geo.size.height, alignment: .top)
                     }
+                    
                 }
                 
             )
-            .opacity(0.8)
-        }
+            
+        }.frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height, alignment: .top)
     }
     
 }

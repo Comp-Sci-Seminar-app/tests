@@ -160,7 +160,6 @@
 				714B7AA110E1AB26F5398289 /* Pods-WeatherTest.debug.xcconfig */,
 				CE611DA3F36A08767FE7FCFF /* Pods-WeatherTest.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
