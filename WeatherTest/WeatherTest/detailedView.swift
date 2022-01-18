@@ -44,22 +44,27 @@ struct detailedView: View {
                 Spacer()
                 Spacer()
             } //making things look nice
-            .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height, alignment: .top)
+            .frame(width: geo.size.width, height: geo.size.height, alignment: .top)
             .background(
                 Group{
+                    
                     if (timeToInt(info.time) < 19 && timeToInt(info.time) > 5){
                         Image("\(info.condition?.code ?? 1000)")
                             .resizable()
-                            .aspectRatio(contentMode: .fill)
+                            .scaledToFill()
+                            .frame(width: geo.size.width, height: geo.size.height, alignment: .top)
                     }else{
                         Image("night")
                             .resizable()
-                            .aspectRatio(contentMode: .fill)
+                            .scaledToFill()
+                            .frame(width: geo.size.width, height: geo.size.height, alignment: .top)
                     }
+                    
                 }
                 
             )
-        }
+            
+        }.frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height, alignment: .top)
     }
     
 }
