@@ -8,10 +8,13 @@
 import SwiftUI
 
 @main
-struct WeatherTestApp: App {
+struct TestApp: App {
+    @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
+
     var body: some Scene {
         WindowGroup {
             ContentView()
+            TaskListView()
         }
     }
 }

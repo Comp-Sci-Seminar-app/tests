@@ -13,6 +13,15 @@
 		1AE68DE2276B81B400A578FD /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1AE68DE1276B81B400A578FD /* Preview Assets.xcassets */; };
 		1AE68DED276B81B500A578FD /* WeatherTestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AE68DEC276B81B500A578FD /* WeatherTestTests.swift */; };
 		1AE68DF8276B81B500A578FD /* WeatherTestUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AE68DF7276B81B500A578FD /* WeatherTestUITests.swift */; };
+		6B57C5E1279704D300B47A4C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B57C5D8279704D200B47A4C /* AppDelegate.swift */; };
+		6B57C5E2279704D300B47A4C /* NotificationSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B57C5D9279704D200B47A4C /* NotificationSettingsView.swift */; };
+		6B57C5E3279704D300B47A4C /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B57C5DA279704D200B47A4C /* NotificationManager.swift */; };
+		6B57C5E4279704D300B47A4C /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B57C5DB279704D200B47A4C /* Task.swift */; };
+		6B57C5E5279704D300B47A4C /* TaskPersistenceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B57C5DC279704D200B47A4C /* TaskPersistenceManager.swift */; };
+		6B57C5E6279704D300B47A4C /* CreateTaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B57C5DD279704D200B47A4C /* CreateTaskView.swift */; };
+		6B57C5E7279704D300B47A4C /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B57C5DE279704D300B47A4C /* LocationManager.swift */; };
+		6B57C5E8279704D300B47A4C /* TaskManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B57C5DF279704D300B47A4C /* TaskManager.swift */; };
+		6B57C5E9279704D300B47A4C /* TaskListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B57C5E0279704D300B47A4C /* TaskListView.swift */; };
 		6B9B90642785D91F0073F876 /* Data Parsing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B9B90632785D91F0073F876 /* Data Parsing.swift */; };
 		6B9B90662785D9490073F876 /* Detailed View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B9B90652785D9490073F876 /* Detailed View.swift */; };
 		6B9B90682785DB4D0073F876 /* List View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B9B90672785DB4D0073F876 /* List View.swift */; };
@@ -48,6 +57,15 @@
 		1AE68DF3276B81B500A578FD /* WeatherTestUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WeatherTestUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1AE68DF7276B81B500A578FD /* WeatherTestUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherTestUITests.swift; sourceTree = "<group>"; };
 		1AE68DF9276B81B500A578FD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6B57C5D8279704D200B47A4C /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		6B57C5D9279704D200B47A4C /* NotificationSettingsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationSettingsView.swift; sourceTree = "<group>"; };
+		6B57C5DA279704D200B47A4C /* NotificationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
+		6B57C5DB279704D200B47A4C /* Task.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
+		6B57C5DC279704D200B47A4C /* TaskPersistenceManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskPersistenceManager.swift; sourceTree = "<group>"; };
+		6B57C5DD279704D200B47A4C /* CreateTaskView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateTaskView.swift; sourceTree = "<group>"; };
+		6B57C5DE279704D300B47A4C /* LocationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
+		6B57C5DF279704D300B47A4C /* TaskManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskManager.swift; sourceTree = "<group>"; };
+		6B57C5E0279704D300B47A4C /* TaskListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskListView.swift; sourceTree = "<group>"; };
 		6B9B90632785D91F0073F876 /* Data Parsing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data Parsing.swift"; sourceTree = "<group>"; };
 		6B9B90652785D9490073F876 /* Detailed View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Detailed View.swift"; sourceTree = "<group>"; };
 		6B9B90672785DB4D0073F876 /* List View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "List View.swift"; sourceTree = "<group>"; };
@@ -106,6 +124,15 @@
 				6B9B90632785D91F0073F876 /* Data Parsing.swift */,
 				6B9B90652785D9490073F876 /* Detailed View.swift */,
 				6B9B90672785DB4D0073F876 /* List View.swift */,
+				6B57C5D8279704D200B47A4C /* AppDelegate.swift */,
+				6B57C5DD279704D200B47A4C /* CreateTaskView.swift */,
+				6B57C5DE279704D300B47A4C /* LocationManager.swift */,
+				6B57C5DA279704D200B47A4C /* NotificationManager.swift */,
+				6B57C5D9279704D200B47A4C /* NotificationSettingsView.swift */,
+				6B57C5DB279704D200B47A4C /* Task.swift */,
+				6B57C5E0279704D300B47A4C /* TaskListView.swift */,
+				6B57C5DF279704D300B47A4C /* TaskManager.swift */,
+				6B57C5DC279704D200B47A4C /* TaskPersistenceManager.swift */,
 				1AE68DDE276B81B400A578FD /* Assets.xcassets */,
 				1AE68DE3276B81B400A578FD /* Info.plist */,
 				1AE68DE0276B81B400A578FD /* Preview Content */,
@@ -268,10 +295,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6B57C5E1279704D300B47A4C /* AppDelegate.swift in Sources */,
 				6B9B90682785DB4D0073F876 /* List View.swift in Sources */,
 				1AE68DDD276B81B100A578FD /* ContentView.swift in Sources */,
+				6B57C5E8279704D300B47A4C /* TaskManager.swift in Sources */,
 				6B9B90662785D9490073F876 /* Detailed View.swift in Sources */,
+				6B57C5E5279704D300B47A4C /* TaskPersistenceManager.swift in Sources */,
+				6B57C5E2279704D300B47A4C /* NotificationSettingsView.swift in Sources */,
+				6B57C5E9279704D300B47A4C /* TaskListView.swift in Sources */,
 				1AE68DDB276B81B100A578FD /* WeatherTestApp.swift in Sources */,
+				6B57C5E3279704D300B47A4C /* NotificationManager.swift in Sources */,
+				6B57C5E7279704D300B47A4C /* LocationManager.swift in Sources */,
+				6B57C5E6279704D300B47A4C /* CreateTaskView.swift in Sources */,
+				6B57C5E4279704D300B47A4C /* Task.swift in Sources */,
 				6B9B90642785D91F0073F876 /* Data Parsing.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
