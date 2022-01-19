@@ -24,10 +24,11 @@ struct listView: View {
         
         
         let rawTime = h.time
-        HStack{
-            Text("Time: \(String(rawTime[rawTime.lastIndex(of: " ")!...]))")
+        VStack{
+            Text("\(String(rawTime[rawTime.lastIndex(of: " ")!...]))").foregroundColor(.black)
             KFImage(URL(string: img))
         }
+        
         
     }
 }

@@ -9,7 +9,7 @@ import Foundation
 
 class FetchData : ObservableObject{
     @Published var responses = Response()
-
+    //this part is copy and pasted from another JSON file, I just changed the url.
     init(){
         
         let url = URL(string: "https://api.weatherapi.com/v1/forecast.json?key=c6a8b99c194944a5bf0162452211612&q=19066&days=1&aqi=yes&alerts=no")!
@@ -30,7 +30,7 @@ class FetchData : ObservableObject{
             
         }.resume()
         
-        //kinda just shows if the code is runnign
+        //kinda just shows if the code is running. I'm leaving this in because I'm used to it
         print(responses.current.temp_f)
     }
 }

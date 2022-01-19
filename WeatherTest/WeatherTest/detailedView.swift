@@ -10,9 +10,10 @@ import SwiftUI
 struct detailedView: View {
     var info : Hour
     
-    
-    var body: some View {
+    public var body: some View {
         let rawTime = info.time
+        
+        
         
         //rounding
         let displayTemp_F = Int(Double.rounded(info.temp_f)())
@@ -22,6 +23,11 @@ struct detailedView: View {
             
             
             VStack{
+                //a back image underneath the real invisible back button. MUCH EASIER THAN SWITCHING EVERYTHING TO "model"s
+                HStack{
+                    Image("back").resizable().frame(width: 50, height: 50, alignment: .leading)
+                    Spacer()
+                }
                 Spacer()
                 Group{
                     
@@ -44,22 +50,29 @@ struct detailedView: View {
                 Spacer()
                 Spacer()
             } //making things look nice
-            .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height, alignment: .top)
+            .frame(width: geo.size.width, height: geo.size.height, alignment: .top)
             .background(
                 Group{
+                    
                     if (timeToInt(info.time) < 19 && timeToInt(info.time) > 5){
                         Image("\(info.condition?.code ?? 1000)")
                             .resizable()
-                            .aspectRatio(contentMode: .fill)
+                            .scaledToFill()
+                            .frame(width: geo.size.width, height: geo.size.height, alignment: .top)
                     }else{
                         Image("night")
                             .resizable()
-                            .aspectRatio(contentMode: .fill)
+                            .scaledToFill()
+                            .frame(width: geo.size.width, height: geo.size.height, alignment: .top)
                     }
+                    
                 }
                 
             )
-        }
+            //general spacing
+        }.frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height, alignment: .top)
     }
+    
+   
     
 }
