@@ -10,9 +10,10 @@ import SwiftUI
 struct detailedView: View {
     var info : Hour
     
-    
-    var body: some View {
+    public var body: some View {
         let rawTime = info.time
+        
+        
         
         //rounding
         let displayTemp_F = Int(Double.rounded(info.temp_f)())
@@ -22,6 +23,11 @@ struct detailedView: View {
             
             
             VStack{
+                //a back image underneath the real invisible back button. MUCH EASIER THAN SWITCHING EVERYTHING TO "model"s
+                HStack{
+                    Image("back").resizable().frame(width: 50, height: 50, alignment: .leading)
+                    Spacer()
+                }
                 Spacer()
                 Group{
                     
@@ -63,8 +69,10 @@ struct detailedView: View {
                 }
                 
             )
-            
+            //general spacing
         }.frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height, alignment: .top)
     }
+    
+   
     
 }
