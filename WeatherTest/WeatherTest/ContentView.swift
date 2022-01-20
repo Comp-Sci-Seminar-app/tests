@@ -14,8 +14,8 @@ struct ContentView: View {
     
     //makes the back button invisible so I can add a custom one.
     init(){
-           Theme.navigationBarColors(background: .clear, titleColor: .clear)
-        }
+        Theme.navigationBarColors(background: .clear, titleColor: .clear)
+    }
     
     var body: some View {
         
@@ -48,8 +48,8 @@ struct ContentView: View {
                                                 .edgesIgnoringSafeArea(.all), //allows it to extend into the navigation bar area
                                                label:  {
                                                 listView(h: f.responses.forecast.forecastday[0].hour[index])
-                                                .frame(width: 90, height: 100, alignment:  .center).background(Color.gray).opacity(0.4).cornerRadius(20)})
-                                                //frames it to look nice and modern rather than what the actual code is.
+                                                    .frame(width: 90, height: 100, alignment:  .center).background(Color.gray).opacity(0.4).cornerRadius(20)})
+                                //frames it to look nice and modern rather than what the actual code is.
                                 
                                 
                                 
