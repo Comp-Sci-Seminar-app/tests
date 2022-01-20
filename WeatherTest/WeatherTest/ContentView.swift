@@ -12,7 +12,7 @@ import struct Kingfisher.KFImage
 struct ContentView: View {
     @StateObject var f = FetchData()
     //git signed me out
-    //makes the back button invisible so I can add a custom one.
+   
     init(){
         Theme.navigationBarColors(background: .clear, titleColor: .clear)
     }
