@@ -23,9 +23,7 @@ struct ContentView: View {
     var body: some View {
         
         NavigationView{
-            
             ScrollView{
-                
                 
                 Group{
                     Button(action: {displayCurrentHours.toggle()}){
@@ -185,9 +183,6 @@ struct ContentView: View {
                 }
                 
             )
-            
-            
-            
             
             
             
