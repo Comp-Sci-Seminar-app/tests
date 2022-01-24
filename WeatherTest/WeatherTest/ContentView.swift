@@ -19,7 +19,7 @@ struct ContentView: View {
     init(){
         Theme.navigationBarColors(background: .clear, titleColor: .clear)
     }
-    
+    //testing something
     var body: some View {
         
         NavigationView{
