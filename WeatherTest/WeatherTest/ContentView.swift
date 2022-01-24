@@ -11,6 +11,8 @@ import struct Kingfisher.KFImage
 
 struct ContentView: View {
     @StateObject var f = FetchData()
+    
+    //controls which hours are visible
     @State var displayCurrentHours = false
     @State var displayTommorrowHours = false
     @State var displayDayAfter = false
@@ -26,6 +28,7 @@ struct ContentView: View {
             ScrollView{
                 
                 Group{
+                    //current data
                     Button(action: {displayCurrentHours.toggle()}){
                         HStack{
                             VStack{
@@ -73,9 +76,10 @@ struct ContentView: View {
                     let imgT = "https:" + (f.responses.forecast.forecastday[1].day.condition?.icon ?? "//www.siue.edu/~itoberm/Images/RedX.gif")
                     Button(action: {displayTommorrowHours.toggle()}){
                         HStack{
+                            //daily icon
                             KFImage(URL(string: imgT))
                             VStack{
-                                //just the current stuff
+                                //tomorrow's stuff
                                 Text("Tomorrow:")
                                 Text("condition: \(f.responses.forecast.forecastday[1].day.condition?.text ?? "Loading...")")
                                 Text("Max temp: \n\(Int(Double.rounded(f.responses.forecast.forecastday[1].day.maxtemp_f)())) degrees fahrenheit")
@@ -120,9 +124,10 @@ struct ContentView: View {
                     let imgT = "https:" + (f.responses.forecast.forecastday[2].day.condition?.icon ?? "//www.siue.edu/~itoberm/Images/RedX.gif")
                     Button(action: {displayDayAfter.toggle()}){
                         HStack{
+                            //daily icon
                             KFImage(URL(string: imgT))
                             VStack{
-                                //just the current stuff
+                                //the day after's stuff
                                 Text("Day After Tomorrow:")
                                 Text("condition: \(f.responses.forecast.forecastday[2].day.condition?.text ?? "Loading...")")
                                 Text("Max temp: \n\(Int(Double.rounded(f.responses.forecast.forecastday[2].day.maxtemp_f)())) degrees fahrenheit")
