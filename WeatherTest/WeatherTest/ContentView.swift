@@ -12,51 +12,160 @@ import struct Kingfisher.KFImage
 struct ContentView: View {
     @StateObject var f = FetchData()
     
+    //controls which hours are visible
+    @State var displayCurrentHours = false
+    @State var displayTommorrowHours = false
+    @State var displayDayAfter = false
+    
     //makes the back button invisible so I can add a custom one.
     init(){
-           Theme.navigationBarColors(background: .clear, titleColor: .clear)
-        }
-    
+        Theme.navigationBarColors(background: .clear, titleColor: .clear)
+    }
+    //testing something
     var body: some View {
         
         NavigationView{
-            
             ScrollView{
                 
-                
                 Group{
-                    VStack{
-                        //just the current stuff
-                        Text("Current Forecast")
-                        Text("condition: \(f.responses.current.condition?.text ?? "Loading...")")
-                        Text("temp: \(Int(Double.rounded(f.responses.current.temp_f)())) degrees fahrenheit")
-                    }
-                    .frame(width: UIScreen.main.bounds.width - 30, height: 120, alignment: .center)
-                    .background(Color.gray.opacity(0.8))
-                    .cornerRadius(20)
-                    .foregroundColor(.black)
-                    .font(.system(size: 18).bold())
-                    .opacity(0.4)
-                    
-                    //iterates through the hours of the day
-                    
-                    ScrollView(.horizontal){
-                        LazyHStack {
-                            ForEach(0..<f.responses.forecast.forecastday[0].hour.count){index in
-                                NavigationLink(destination:
-                                                detailedView(info: f.responses.forecast.forecastday[0].hour[index])
-                                                .edgesIgnoringSafeArea(.all), //allows it to extend into the navigation bar area
-                                               label:  {
-                                                listView(h: f.responses.forecast.forecastday[0].hour[index])
-                                                .frame(width: 90, height: 100, alignment:  .center).background(Color.gray).opacity(0.4).cornerRadius(20)})
-                                                //frames it to look nice and modern rather than what the actual code is.
-                                
-                                
-                                
+                    //current data
+                    Button(action: {displayCurrentHours.toggle()}){
+                        HStack{
+                            VStack{
+                                //just the current stuff
+                                Text("Current Forecast")
+                                Text("condition: \(f.responses.current.condition?.text ?? "Loading...")")
+                                Text("temp: \(Int(Double.rounded(f.responses.current.temp_f)())) degrees fahrenheit")
+                            }
+                            if(displayCurrentHours){
+                                Image("up").resizable().frame(width: 50, height: 50, alignment: .leading)
+                            }else{
+                                Image("down").resizable().frame(width: 50, height: 50, alignment: .leading)
                             }
                         }
-                        //makes it look much nicer
-                    }.navigationBarHidden(true)
+                        .frame(width: UIScreen.main.bounds.width - 30, height: 120, alignment: .center)
+                        .background(Color.gray.opacity(0.8))
+                        .cornerRadius(20)
+                        .foregroundColor(.black)
+                        .font(.system(size: 18).bold())
+                        .opacity(0.4)
+                    }
+                    //iterates through the hours of the day
+                    if (displayCurrentHours){
+                        ScrollView(.horizontal){
+                            LazyHStack {
+                                ForEach(0..<f.responses.forecast.forecastday[0].hour.count){index in
+                                    NavigationLink(destination:
+                                                    detailedView(info: f.responses.forecast.forecastday[0].hour[index])
+                                                    .edgesIgnoringSafeArea(.all), //allows it to extend into the navigation bar area
+                                                   label:  {
+                                                    listView(h: f.responses.forecast.forecastday[0].hour[index])
+                                                        .frame(width: 90, height: 100, alignment:  .center).background(Color.gray).opacity(0.4).cornerRadius(20)})
+                                    //frames it to look nice and modern rather than what the actual code is.
+                                    
+                                    
+                                    
+                                }
+                            }
+                            //makes it look much nicer
+                        }.navigationBarHidden(true)
+                    }
+                }
+                Spacer()
+                Group{
+                    let imgT = "https:" + (f.responses.forecast.forecastday[1].day.condition?.icon ?? "//www.siue.edu/~itoberm/Images/RedX.gif")
+                    Button(action: {displayTommorrowHours.toggle()}){
+                        HStack{
+                            //daily icon
+                            KFImage(URL(string: imgT))
+                            VStack{
+                                //tomorrow's stuff
+                                Text("Tomorrow:")
+                                Text("condition: \(f.responses.forecast.forecastday[1].day.condition?.text ?? "Loading...")")
+                                Text("Max temp: \n\(Int(Double.rounded(f.responses.forecast.forecastday[1].day.maxtemp_f)())) degrees fahrenheit")
+                                Text("Min temp: \n\(Int(Double.rounded(f.responses.forecast.forecastday[1].day.mintemp_f)())) degrees fahrenheit")
+                            }.font(.system(size: 16))
+                            if(displayTommorrowHours){
+                                Image("up").resizable().frame(width: 50, height: 50, alignment: .leading)
+                            }else{
+                                Image("down").resizable().frame(width: 50, height: 50, alignment: .leading)
+                            }
+                        }
+                        .frame(width: UIScreen.main.bounds.width - 30, height: 150, alignment: .center)
+                        .background(Color.gray.opacity(0.8))
+                        .cornerRadius(20)
+                        .foregroundColor(.black)
+                        .font(.system(size: 18).bold())
+                        .opacity(0.4)
+                    }
+                    //iterates through the hours of the day
+                    if (displayTommorrowHours){
+                        ScrollView(.horizontal){
+                            LazyHStack {
+                                ForEach(0..<f.responses.forecast.forecastday[1].hour.count){index in
+                                    NavigationLink(destination:
+                                                    detailedView(info: f.responses.forecast.forecastday[1].hour[index])
+                                                    .edgesIgnoringSafeArea(.all), //allows it to extend into the navigation bar area
+                                                   label:  {
+                                                    listView(h: f.responses.forecast.forecastday[1].hour[index])
+                                                        .frame(width: 90, height: 100, alignment:  .center).background(Color.gray).opacity(0.4).cornerRadius(20)})
+                                    //frames it to look nice and modern rather than what the actual code is.
+                                    
+                                    
+                                    
+                                }
+                            }
+                            //makes it look much nicer
+                        }.navigationBarHidden(true)
+                    }
+                }
+                Spacer()
+                Group{
+                    let imgT = "https:" + (f.responses.forecast.forecastday[2].day.condition?.icon ?? "//www.siue.edu/~itoberm/Images/RedX.gif")
+                    Button(action: {displayDayAfter.toggle()}){
+                        HStack{
+                            //daily icon
+                            KFImage(URL(string: imgT))
+                            VStack{
+                                //the day after's stuff
+                                Text("Day After Tomorrow:")
+                                Text("condition: \(f.responses.forecast.forecastday[2].day.condition?.text ?? "Loading...")")
+                                Text("Max temp: \n\(Int(Double.rounded(f.responses.forecast.forecastday[2].day.maxtemp_f)())) degrees fahrenheit")
+                                Text("Min temp: \n\(Int(Double.rounded(f.responses.forecast.forecastday[2].day.mintemp_f)())) degrees fahrenheit")
+                            }.font(.system(size: 16))
+                            if(displayDayAfter){
+                                Image("up").resizable().frame(width: 50, height: 50, alignment: .leading)
+                            }else{
+                                Image("down").resizable().frame(width: 50, height: 50, alignment: .leading)
+                            }
+                        }
+                        .frame(width: UIScreen.main.bounds.width - 30, height: 150, alignment: .center)
+                        .background(Color.gray.opacity(0.8))
+                        .cornerRadius(20)
+                        .foregroundColor(.black)
+                        .font(.system(size: 18).bold())
+                        .opacity(0.4)
+                    }
+                    //iterates through the hours of the day
+                    if (displayDayAfter){
+                        ScrollView(.horizontal){
+                            LazyHStack {
+                                ForEach(0..<f.responses.forecast.forecastday[2].hour.count){index in
+                                    NavigationLink(destination:
+                                                    detailedView(info: f.responses.forecast.forecastday[2].hour[index])
+                                                    .edgesIgnoringSafeArea(.all), //allows it to extend into the navigation bar area
+                                                   label:  {
+                                                    listView(h: f.responses.forecast.forecastday[2].hour[index])
+                                                        .frame(width: 90, height: 100, alignment:  .center).background(Color.gray).opacity(0.4).cornerRadius(20)})
+                                    //frames it to look nice and modern rather than what the actual code is.
+                                    
+                                    
+                                    
+                                }
+                            }
+                            //makes it look much nicer
+                        }.navigationBarHidden(true)
+                    }
                 }
                 
                 
@@ -82,9 +191,6 @@ struct ContentView: View {
             
             
             
-            
-            
-            
         } .background(
             Group{
                 //checks if it is night
@@ -102,7 +208,7 @@ struct ContentView: View {
             }
             
         )
-        //test
+        
         
     }
 }

@@ -45,7 +45,7 @@
 		1AE68DDC276B81B100A578FD /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		1AE68DDE276B81B400A578FD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1AE68DE1276B81B400A578FD /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		1AE68DE3276B81B400A578FD /* Info.plist */ = {isa = PBXFileReference; explicitFileType = text.xml; path = Info.plist; sourceTree = "<group>"; };
+		1AE68DE3276B81B400A578FD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1AE68DE8276B81B500A578FD /* WeatherTestTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WeatherTestTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1AE68DEC276B81B500A578FD /* WeatherTestTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherTestTests.swift; sourceTree = "<group>"; };
 		1AE68DEE276B81B500A578FD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
