@@ -19,9 +19,9 @@ struct ContentView: View {
     
     //makes the back button invisible so I can add a custom one.
     init(){
-        Theme.navigationBarColors(background: .clear, titleColor: .clear)
-    }
-    //testing something
+           Theme.navigationBarColors(background: .clear, titleColor: .clear)
+        }
+    
     var body: some View {
         
         NavigationView{
