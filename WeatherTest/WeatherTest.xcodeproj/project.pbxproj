@@ -17,6 +17,7 @@
 		1AE68DED276B81B500A578FD /* WeatherTestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AE68DEC276B81B500A578FD /* WeatherTestTests.swift */; };
 		1AE68DF8276B81B500A578FD /* WeatherTestUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AE68DF7276B81B500A578FD /* WeatherTestUITests.swift */; };
 		EA483C8BE05AAF37BEC4A75E /* libPods-WeatherTest.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ED5F42D7BDA87D5B97B58B17 /* libPods-WeatherTest.a */; };
+		F091E557279F0E4600E5155B /* CompactView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F091E556279F0E4600E5155B /* CompactView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,7 @@
 		714B7AA110E1AB26F5398289 /* Pods-WeatherTest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeatherTest.debug.xcconfig"; path = "Target Support Files/Pods-WeatherTest/Pods-WeatherTest.debug.xcconfig"; sourceTree = "<group>"; };
 		CE611DA3F36A08767FE7FCFF /* Pods-WeatherTest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeatherTest.release.xcconfig"; path = "Target Support Files/Pods-WeatherTest/Pods-WeatherTest.release.xcconfig"; sourceTree = "<group>"; };
 		ED5F42D7BDA87D5B97B58B17 /* libPods-WeatherTest.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-WeatherTest.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F091E556279F0E4600E5155B /* CompactView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompactView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,6 +118,7 @@
 				1A79C437276B849100016F6D /* dataParsing.swift */,
 				1AC4675E2784820F00093441 /* listView.swift */,
 				1AC467602784AE5600093441 /* detailedView.swift */,
+				F091E556279F0E4600E5155B /* CompactView.swift */,
 			);
 			path = WeatherTest;
 			sourceTree = "<group>";
@@ -322,6 +325,7 @@
 				1AE68DDD276B81B100A578FD /* ContentView.swift in Sources */,
 				1AC467612784AE5600093441 /* detailedView.swift in Sources */,
 				1A79C438276B849100016F6D /* dataParsing.swift in Sources */,
+				F091E557279F0E4600E5155B /* CompactView.swift in Sources */,
 				1AE68DDB276B81B100A578FD /* WeatherTestApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
