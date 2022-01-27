@@ -8,17 +8,17 @@
 import SwiftUI
 
 struct detailedView: View {
-    var info : HPeriods
-    var icon : Hour
+    var info : Hour
+    
     public var body: some View {
-        let rawTime = icon.time
+        let rawTime = info.time
         
         
         
         //rounding
-        let displayTemp_F = info.temperature
-//        let displayFeelslike_f = Int(Double.rounded(icon.feelslike_f)())
-        let displayWind_mph = info.windSpeed
+        let displayTemp_F = Int(Double.rounded(info.temp_f)())
+        let displayFeelslike_f = Int(Double.rounded(info.feelslike_f)())
+        let displayWind_mph = Int(Double.rounded(info.wind_mph)())
         GeometryReader{geo in
             
             
@@ -32,11 +32,11 @@ struct detailedView: View {
                 Group{
                     
                     //displaying all the data
-                    Text(info.shortForecast ?? "API error")
+                    Text(info.condition?.text ?? "API error")
                     Text("Time: \(String(rawTime[rawTime.lastIndex(of: " ")!...]))")
                     Text("Temperature: \(displayTemp_F) degrees fahrenheit")
-                    //Text("Feels like: \(displayFeelslike_f) degrees fahrenheit")
-                    Text("Wind MPH: "+displayWind_mph)
+                    Text("Feels like: \(displayFeelslike_f) degrees fahrenheit")
+                    Text("Wind MPH: \(displayWind_mph)")
                 }
                 .frame(width: UIScreen.main.bounds.width - 30, height: 50, alignment: .center)
                 .background(Color.white.opacity(0.5))
@@ -54,8 +54,8 @@ struct detailedView: View {
             .background(
                 Group{
                     
-                    if info.isDaytime{
-                        Image("\(icon.condition?.code ?? 1000)")
+                    if (timeToInt(info.time) < 19 && timeToInt(info.time) > 5){
+                        Image("\(info.condition?.code ?? 1000)")
                             .resizable()
                             .scaledToFill()
                             .frame(width: geo.size.width, height: geo.size.height, alignment: .top)
