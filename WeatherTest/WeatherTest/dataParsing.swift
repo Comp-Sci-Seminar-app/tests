@@ -84,4 +84,77 @@ struct Hour: Codable{
 extension Hour: Identifiable{
     var id: String {return time}
 }
-//new branch
+
+//structs for geocoding
+struct Recived : Codable{
+    var result : Result = Result()
+}
+struct Result : Codable{
+    var addressMatches : [AddressMatches] = [AddressMatches()]
+}
+struct AddressMatches : Codable{
+    var coordinates : Coordinates = Coordinates()
+}
+struct Coordinates : Codable{
+    var x : Float = 0
+    var y : Float = 0
+}
+//end of geocoding structs
+//structs for weather decoding
+struct WResponse : Codable {
+    var properties : Properties = Properties()
+}
+struct Properties: Codable{
+    var forecast : String = "link"
+    var forecastHourly : String = "link"
+}
+//end of weather structs
+//structs for daily forecast decoding
+struct DForecast : Codable {
+    var properties : FDProperties = FDProperties()
+    
+}
+struct FDProperties: Codable{
+    var periods = Array(repeating: DPeriods(), count : 14)//intiilizes with the count it will have post decode
+}
+struct DPeriods : Codable{
+    var number : Int = 0
+    var name : String = ""
+    var startTime : String = ""
+    var endTime : String = ""
+    var isDaytime : Bool?
+    var temperature : Int = 0
+    var temperatureUnit : String = ""
+    var windSpeed : String = ""
+    var windDirection : String = ""
+    var icon : String = ""
+    var shortForecast : String = ""
+    var detailedForecast : String = ""
+}
+//end of daily forecast structs
+//structs for hourly forecast decoding
+struct HForecast : Codable {
+    var properties : FHProperties = FHProperties()
+    
+}
+struct FHProperties: Codable{
+    var periods  = Array(repeating: HPeriods(), count : 156)//intiilizes with the count it will have post decode
+}
+struct HPeriods : Codable{
+    var number : Int = 0
+    var name : String = ""
+    var startTime : String = ""
+    var endTime : String = ""
+    var isDaytime : Bool = true
+    var temperature : Int = 0
+    var temperatureUnit : String = ""
+    var windSpeed : String = ""
+    var windDirection : String = ""
+    var icon : String = ""
+    var shortForecast : String?
+    var detailedForecast : String = ""
+}
+//end of daily forecast structs
+
+//marked for merge
+
