@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1A79C438276B849100016F6D /* dataParsing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A79C437276B849100016F6D /* dataParsing.swift */; };
+		1AAA445B27A2D5E200F13F78 /* CompactView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AAA445A27A2D5E200F13F78 /* CompactView.swift */; };
 		1AC4675F2784820F00093441 /* listView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AC4675E2784820F00093441 /* listView.swift */; };
 		1AC467612784AE5600093441 /* detailedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AC467602784AE5600093441 /* detailedView.swift */; };
 		1AE68DDB276B81B100A578FD /* WeatherTestApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AE68DDA276B81B100A578FD /* WeatherTestApp.swift */; };
@@ -38,6 +39,7 @@
 
 /* Begin PBXFileReference section */
 		1A79C437276B849100016F6D /* dataParsing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dataParsing.swift; sourceTree = "<group>"; };
+		1AAA445A27A2D5E200F13F78 /* CompactView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompactView.swift; sourceTree = "<group>"; };
 		1AC4675E2784820F00093441 /* listView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = listView.swift; sourceTree = "<group>"; };
 		1AC467602784AE5600093441 /* detailedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = detailedView.swift; sourceTree = "<group>"; };
 		1AE68DD7276B81B100A578FD /* WeatherTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeatherTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -108,6 +110,7 @@
 		1AE68DD9276B81B100A578FD /* WeatherTest */ = {
 			isa = PBXGroup;
 			children = (
+				1AAA445A27A2D5E200F13F78 /* CompactView.swift */,
 				1AE68DDA276B81B100A578FD /* WeatherTestApp.swift */,
 				1AE68DDC276B81B100A578FD /* ContentView.swift */,
 				1AE68DDE276B81B400A578FD /* Assets.xcassets */,
@@ -322,6 +325,7 @@
 				1AE68DDD276B81B100A578FD /* ContentView.swift in Sources */,
 				1AC467612784AE5600093441 /* detailedView.swift in Sources */,
 				1A79C438276B849100016F6D /* dataParsing.swift in Sources */,
+				1AAA445B27A2D5E200F13F78 /* CompactView.swift in Sources */,
 				1AE68DDB276B81B100A578FD /* WeatherTestApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
