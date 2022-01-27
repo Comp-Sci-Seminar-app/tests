@@ -188,3 +188,5 @@ class Theme {
 //HOW TO STORE APPDATA: add @AppStorage(<string>) as a wrapper. its like the state wrapper except far cooler.
 //IF GIT MERGE IS HAVING ISSUES:  git merge <branch name> -X rename-threshold=100%
 //fix all issues, then run git commit -am 'Conflicts resolved'
+
+//marked for merge

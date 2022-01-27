@@ -248,3 +248,5 @@ struct HPeriods : Codable{
     var detailedForecast : String = ""
 }
 //end of daily forecast structs
+
+//marked for merge
