@@ -4,6 +4,13 @@
 //
 //  Created by Ari Steinfeld (student LM) on 12/16/21.
 //
+func URlForm(_ address : String = "618 Schiller Ave", city : String = "Merion Station", state : String = "PA", zip : String = "19066") -> String{//function reads in an address and outputs a string url
+    var finalURL  = "https://geocoding.geo.census.gov/geocoder/locations/onelineaddress?address="//static portion of the URL that holds the paramaters we dont need to change
+    let URLEnd = "&benchmark=2020&format=json"//same as above but we stick it on the back
+    finalURL = finalURL+address.replacingOccurrences(of: " ", with: "+")+"%2C+"+city.replacingOccurrences(of: " ", with: "+")+"%2C+"+state+"+"+zip+URLEnd//creates the URL replacing spaces with plus signs and adding other things in between that are nessecary for the link to function
+    //print("In URLForm: "+finalURL)//prints for debug
+    return finalURL//returns the url
+}
 
 import SwiftUI
 import struct Kingfisher.KFImage
@@ -11,7 +18,7 @@ import struct Kingfisher.KFImage
 
 struct ContentView: View {
     @StateObject var f = FetchData()
-    
+    @StateObject var g = Decoded()
     //controls which hours are visible
     @State var displayCurrentHours = false
     @State var displayTommorrowHours = false
@@ -23,7 +30,8 @@ struct ContentView: View {
     }
     //testing something
     var body: some View {
-        
+        let allDaily = g.dForecast.properties.periods
+        let allHourly = g.hForecast.properties.periods
         NavigationView{
             ScrollView{
                 
@@ -282,5 +290,3 @@ class Theme {
 //HOW TO STORE APPDATA: add @AppStorage(<string>) as a wrapper. its like the state wrapper except far cooler.
 //IF GIT MERGE IS HAVING ISSUES:  git merge <branch name> -X rename-threshold=100%
 //fix all issues, then run git commit -am 'Conflicts resolved'
-
-//marked for merge

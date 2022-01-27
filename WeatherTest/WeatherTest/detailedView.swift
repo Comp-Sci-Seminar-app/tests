@@ -76,5 +76,3 @@ struct detailedView: View {
    
     
 }
-
-//marked for merge
