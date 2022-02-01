@@ -48,7 +48,7 @@ struct ContentView: View {
                         .cornerRadius(20)
                         .foregroundColor(.black)
                         .font(.system(size: 18).bold())
-                        .opacity(0.4)
+                        .opacity(0.8)
                     }
                     //iterates through the hours of the day
                     if (displayCurrentHours){
@@ -60,7 +60,7 @@ struct ContentView: View {
                                                     .edgesIgnoringSafeArea(.all), //allows it to extend into the navigation bar area
                                                    label:  {
                                                     listView(h: f.responses.forecast.forecastday[0].hour[index])
-                                                        .frame(width: 90, height: 100, alignment:  .center).background(Color.gray).opacity(0.4).cornerRadius(20)})
+                                                        .frame(width: 90, height: 100, alignment:  .center).background(Color.gray).opacity(0.8).cornerRadius(20)})
                                     //frames it to look nice and modern rather than what the actual code is.
                                     
                                     
@@ -96,7 +96,7 @@ struct ContentView: View {
                         .cornerRadius(20)
                         .foregroundColor(.black)
                         .font(.system(size: 18).bold())
-                        .opacity(0.4)
+                        .opacity(0.8)
                     }
                     //iterates through the hours of the day
                     if (displayTommorrowHours){
@@ -108,7 +108,7 @@ struct ContentView: View {
                                                     .edgesIgnoringSafeArea(.all), //allows it to extend into the navigation bar area
                                                    label:  {
                                                     listView(h: f.responses.forecast.forecastday[1].hour[index])
-                                                        .frame(width: 90, height: 100, alignment:  .center).background(Color.gray).opacity(0.4).cornerRadius(20)})
+                                                        .frame(width: 90, height: 100, alignment:  .center).background(Color.gray).opacity(0.8).cornerRadius(20)})
                                     //frames it to look nice and modern rather than what the actual code is.
                                     
                                     
@@ -144,7 +144,7 @@ struct ContentView: View {
                         .cornerRadius(20)
                         .foregroundColor(.black)
                         .font(.system(size: 18).bold())
-                        .opacity(0.4)
+                        .opacity(0.8)
                     }
                     //iterates through the hours of the day
                     if (displayDayAfter){
@@ -156,7 +156,7 @@ struct ContentView: View {
                                                     .edgesIgnoringSafeArea(.all), //allows it to extend into the navigation bar area
                                                    label:  {
                                                     listView(h: f.responses.forecast.forecastday[2].hour[index])
-                                                        .frame(width: 90, height: 100, alignment:  .center).background(Color.gray).opacity(0.4).cornerRadius(20)})
+                                                        .frame(width: 90, height: 100, alignment:  .center).background(Color.gray).opacity(0.8).cornerRadius(20)})
                                     //frames it to look nice and modern rather than what the actual code is.
                                     
                                     
